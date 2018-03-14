@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="295.0" prefWidth="285.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.gui.RegistrationController">
+   <children>
+      <Label layoutX="31.0" layoutY="64.0" text="Username:" AnchorPane.leftAnchor="31.0" AnchorPane.rightAnchor="193.0">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="usernameField" layoutX="29.0" layoutY="83.0" prefHeight="25.0" prefWidth="227.0" promptText="Create a username" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="29.0" AnchorPane.topAnchor="83.0" />
+      <TextField fx:id="emailField" layoutX="29.0" layoutY="144.0" prefHeight="25.0" prefWidth="227.0" promptText="example@email.com" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="29.0" />
+      <PasswordField fx:id="passwordField" layoutX="29.0" layoutY="202.0" prefHeight="25.0" prefWidth="227.0" promptText="Create a password" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="29.0" />
+      <Label layoutX="31.0" layoutY="125.0" text="Email address:" textAlignment="CENTER" AnchorPane.leftAnchor="31.0">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Button fx:id="signUp" layoutX="31.0" layoutY="256.0" mnemonicParsing="false" onAction="#register" prefHeight="25.0" prefWidth="135.0" text="Create an account" textAlignment="CENTER" AnchorPane.bottomAnchor="15.0" />
+      <Label layoutX="31.0" layoutY="183.0" text="Password:" AnchorPane.leftAnchor="31.0">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="98.0" layoutY="17.0" prefHeight="36.0" prefWidth="89.0" text="Sign up" textAlignment="CENTER" AnchorPane.topAnchor="15.0">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Button fx:id="cancel" cancelButton="true" layoutX="186.0" layoutY="256.0" mnemonicParsing="false" onAction="#cancel" prefHeight="25.0" prefWidth="68.0" text="Cancel" textAlignment="CENTER" AnchorPane.bottomAnchor="15.0" />
+      <Label fx:id="errorMessage" layoutX="30.0" layoutY="234.0" prefHeight="17.0" prefWidth="220.0" textAlignment="CENTER" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTimePicker?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="245.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.gui.AddTaskController">
+   <children>
+      <TextField fx:id="titleTask" layoutX="11.0" layoutY="14.0" prefHeight="25.0" prefWidth="245.0" promptText="Title" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="10.0" />
+      <TextArea fx:id="descriptionTask" layoutX="5.0" layoutY="41.0" prefHeight="169.0" prefWidth="440.0" promptText="Description" style=": 0;" AnchorPane.bottomAnchor="36.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="40.0" />
+      <HBox layoutX="238.0" layoutY="202.0" prefHeight="25.0" prefWidth="200.0" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0">
+         <children>
+            <Button fx:id="saveTask" mnemonicParsing="false" onAction="#saveTask" prefHeight="25.0" prefWidth="100.0" text="Save task">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#closeWindow" prefHeight="25.0" prefWidth="100.0" text="Cancel" />
+         </children>
+      </HBox>
+      <HBox layoutX="256.0" layoutY="5.0" prefHeight="28.0" prefWidth="193.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="5.0">
+         <children>
+            <JFXDatePicker fx:id="date" prefHeight="28.0" prefWidth="104.0" promptText="Date">
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+            </JFXDatePicker>
+            <JFXTimePicker fx:id="time" prefHeight="28.0" prefWidth="94.0" promptText="Time" />
+         </children>
+      </HBox>
+      <Label fx:id="errorMessage" layoutX="19.0" layoutY="218.0" prefHeight="17.0" prefWidth="200.0" textAlignment="CENTER" textFill="#fc0000" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="19.0">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
