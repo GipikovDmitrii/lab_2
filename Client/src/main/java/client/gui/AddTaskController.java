@@ -14,11 +14,6 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-import java.time.Clock;
-import java.time.LocalDateTime;
-import java.time.ZoneId;
-import java.time.ZonedDateTime;
-
 public class AddTaskController {
 
     private ClientMain clientMain;
@@ -56,6 +51,7 @@ public class AddTaskController {
     private void saveTask() {
         if (titleTask.getText().equals("")) {
             errorMessage.setText("error");
+            //titleTask.setStyle("-fx-border-color: red;");
         } else if (descriptionTask.getText().equals("")) {
             errorMessage.setText("error");
         } else if (time.getValue() == null) {

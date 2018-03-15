@@ -9,19 +9,14 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
 import javafx.stage.Stage;
-import java.util.*;
 
-public class NotificationController extends TimerTask {
+public class NotificationController {
 
     private Handler handler;
     private ClientMain clientMain;
     private Task task;
     private Stage stage;
 
-    @FXML
-    private Label taskTitle;
-    @FXML
-    private Label taskDescription;
     @FXML
     private Button completeTask;
     @FXML
@@ -30,6 +25,13 @@ public class NotificationController extends TimerTask {
     private MenuItem oneHour;
     @FXML
     private MenuItem oneDay;
+    @FXML
+    private Label taskTitle;
+    @FXML
+    private Label taskDescription;
+
+    public NotificationController () {
+    }
 
     public NotificationController(Task task) {
         this.handler = Handler.getHandler();
@@ -59,11 +61,7 @@ public class NotificationController extends TimerTask {
         handler.rescheduleTask(task.getTaskId(), 3);
     }
 
-    private void createNotification() {
-    }
-
-    @Override
-    public void run() {
-        createNotification();
+    public void showNotification() {
+        clientMain.showNotificationWindow();
     }
 }

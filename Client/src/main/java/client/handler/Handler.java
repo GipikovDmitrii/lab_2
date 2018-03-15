@@ -1,6 +1,5 @@
 package client.handler;
 
-import client.gui.NotificationController;
 import client.notification.Notification;
 import client.task.Task;
 
@@ -15,9 +14,6 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.ResourceBundle;
 
 
@@ -30,10 +26,13 @@ public class Handler {
     private String address;
     private int port;
     private String userId;
-    //private Notification notification = new Notification();
+    private Notification notification;
     public ObservableList<Task> tasks = FXCollections.observableArrayList();
 
     private Handler() {
+        notification = new Notification();
+        address = ResourceBundle.getBundle("config").getString("address");
+        port = Integer.parseInt(ResourceBundle.getBundle("config").getString("port"));
         connect();
     }
 
@@ -47,8 +46,6 @@ public class Handler {
     private void connect() {
         if (output == null && input == null) {
             try {
-                address = ResourceBundle.getBundle("config").getString("address");
-                port = Integer.parseInt(ResourceBundle.getBundle("config").getString("port"));
                 socket = new Socket(address, port);
                 output = new ObjectOutputStream(socket.getOutputStream());
                 input = new ObjectInputStream(socket.getInputStream());
@@ -127,8 +124,9 @@ public class Handler {
                     o.get("description").getAsString(),
                     o.get("time").getAsString(),
                     o.get("createdTime").getAsString());
-            tasks.add(task);
+            this.tasks.add(task);
         }
+        notification.updateNotification(tasks);
     }
 
     public void rescheduleTask(int taskID, int time) {
@@ -164,10 +162,10 @@ public class Handler {
     }
 
     public ObservableList<Task> getTasks() {
-        return tasks;
+        return this.tasks;
     }
 
     private void clearTaskList() {
-        tasks.clear();
+        this.tasks.clear();
     }
 }

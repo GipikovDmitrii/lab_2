@@ -5,6 +5,7 @@ import client.gui.*;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Font;
 import javafx.stage.Modality;
@@ -20,6 +21,7 @@ public class ClientMain extends Application{
 
     public void start(Stage primaryStage) {
         this.primaryStage = primaryStage;
+        primaryStage.getIcons().add(new Image("images/icon.png"));
         showLoginWindow();
     }
 
@@ -75,6 +77,27 @@ public class ClientMain extends Application{
         }
     }
 
+    public void showNotificationWindow() {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("/fxml/notification.fxml"));
+            AnchorPane pane = loader.load();
+            Scene scene = new Scene(pane);
+            Stage stage = new Stage();
+            NotificationController controller = loader.getController();
+            controller.setGui(this);
+            controller.getStage(stage);
+            stage.initOwner(primaryStage);
+            stage.setScene(scene);
+            stage.setTitle("Notification");
+            stage.setResizable(false);
+            stage.getIcons().add(new Image("images/icon.png"));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void showNewTaskWindow() {
         try {
             FXMLLoader loader = new FXMLLoader();
@@ -90,30 +113,13 @@ public class ClientMain extends Application{
             AddTaskController controller = loader.getController();
             controller.setDialogStage(stage);
             controller.setGui(this);
-            stage.showAndWait();
+            stage.getIcons().add(new Image("images/icon.png"));
+            stage.show();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public void showNotificationWindow() {
-        try {
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("/fxml/notification.fxml"));
-            AnchorPane pane = loader.load();
-            Stage stage = new Stage();
-            Scene scene = new Scene(pane);
-            stage.setTitle("Notification");
-            stage.setResizable(false);
-            stage.setScene(scene);
-            NotificationController controller = loader.getController();
-            controller.getStage(stage);
-            controller.setGui(this);
-            stage.showAndWait();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 
     public Stage getPrimaryStage() {
         return primaryStage;
