@@ -1,3 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <users>
+    <user>
+        <id>58ec1f58-2eb7-4066-ba80-d96988f9d462</id>
+        <username>qwertyuio</username>
+        <password>qwertyuio</password>
+        <email>qwertyuio</email>
+        <journal lastTaskId="3"/>
+    </user>
 </users>

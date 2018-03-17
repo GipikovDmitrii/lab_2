@@ -7,7 +7,7 @@ import java.util.List;
 
 public class Journal {
 
-    @XmlElement(name = "client.task")
+    @XmlElement(name = "task")
     private List<Task> tasks;
     private int lastTaskId = 0;
 
@@ -45,8 +45,12 @@ public class Journal {
         return new Task();
     }
 
-    public void removeTask(Task task) {
+    public void deleteTask(Task task) {
         tasks.remove(task);
+    }
+
+    public void deleteAllTask() {
+        tasks.clear();
     }
 
     public int size() {

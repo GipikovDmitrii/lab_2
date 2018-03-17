@@ -43,8 +43,8 @@ public class Handler implements Runnable {
             case "registration":
                 registration(
                         json.get("username").getAsString(),
-                        json.get("password").getAsString(),
-                        json.get("email").getAsString());
+                        json.get("email").getAsString(),
+                        json.get("password").getAsString());
                 break;
             case "login":
                 if (isRegister(json.get("username").getAsString(), json.get("password").getAsString())) {
@@ -75,9 +75,13 @@ public class Handler implements Runnable {
                 answer.add("tasks", array);
                 break;
             }
-            case "disconnect":
+            case "disconnect": {
                 disconnect();
                 break;
+            }
+            case "deleteAllTask": {
+                deleteAllTask(json.get("userId").getAsString());
+            }
         }
         sendAnswer(answer.toString());
     }
@@ -102,10 +106,14 @@ public class Handler implements Runnable {
     }
 
     private void removeTask(String userId, int id) {
-        userList.getUserById(userId).getJournal().removeTask(userList.getUserById(userId).getJournal().getTaskById(id));
+        userList.getUserById(userId).getJournal().deleteTask(userList.getUserById(userId).getJournal().getTaskById(id));
     }
 
     private void rescheduleTask(int taskId, int time) {
+    }
+
+    private void deleteAllTask(String userId) {
+        userList.getUserById(userId).getJournal().deleteAllTask();
     }
 
     private JsonArray getTaskList(String userId) {
