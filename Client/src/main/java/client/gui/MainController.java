@@ -75,6 +75,7 @@ public class MainController {
 
     @FXML
     private void deleteAllTask() {
+        handler.deleteAllTask();
     }
 
     @FXML
@@ -90,6 +91,7 @@ public class MainController {
 
     @FXML
     private void exit() {
+        handler.disconnect();
         System.exit(0);
     }
 

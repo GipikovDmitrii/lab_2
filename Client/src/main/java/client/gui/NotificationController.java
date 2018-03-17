@@ -10,6 +10,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
 import javafx.stage.Stage;
 
+import java.io.IOException;
+
 public class NotificationController {
 
     private Handler handler;
@@ -47,18 +49,27 @@ public class NotificationController {
     }
 
     @FXML
+    private void complete() {
+        handler.deleteTask(task.getTaskId());
+        stage.close();
+    }
+
+    @FXML
     private void rescheduleFiveMin() {
         handler.rescheduleTask(task.getTaskId(), 1);
+        stage.close();
     }
 
     @FXML
     private void rescheduleOneHour() {
         handler.rescheduleTask(task.getTaskId(), 2);
+        stage.close();
     }
 
     @FXML
     private void rescheduleOneDay() {
         handler.rescheduleTask(task.getTaskId(), 3);
+        stage.close();
     }
 
     public void showNotification() {

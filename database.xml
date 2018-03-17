@@ -2,9 +2,9 @@
 <users>
     <user>
         <id>58ec1f58-2eb7-4066-ba80-d96988f9d462</id>
-        <username>qwertyuio</username>
-        <password>qwertyuio</password>
-        <email>qwertyuio</email>
-        <journal lastTaskId="3"/>
+        <username>username</username>
+        <password>password</password>
+        <email>email</email>
+        <journal lastTaskId="0"/>
     </user>
 </users>

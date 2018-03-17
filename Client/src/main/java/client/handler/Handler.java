@@ -113,6 +113,17 @@ public class Handler {
         }
     }
 
+    public void deleteAllTask() {
+        JsonObject object = new JsonObject();
+        try {
+            object.add("command", new JsonPrimitive("deleteAllTask"));
+            object.add("userId", new JsonPrimitive(userId));
+            getTaskList(sendAndGetAnswer(object.toString()));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     private void getTaskList(JsonObject object) {
         clearTaskList();
         JsonArray array = object.get("tasks").getAsJsonArray();

@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7b93f862-2007-4595-bc49-52a3b6cb4e1a" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+    <list default="true" id="7b93f862-2007-4595-bc49-52a3b6cb4e1a" name="Default" comment="Add notification system">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/Client/src/main/java/client/gui/MainController.java" afterPath="$PROJECT_DIR$/Client/src/main/java/client/gui/MainController.java" />
       <change beforePath="$PROJECT_DIR$/Client/src/main/java/client/gui/NotificationController.java" afterPath="$PROJECT_DIR$/Client/src/main/java/client/gui/NotificationController.java" />
       <change beforePath="$PROJECT_DIR$/Client/src/main/java/client/handler/Handler.java" afterPath="$PROJECT_DIR$/Client/src/main/java/client/handler/Handler.java" />
-      <change beforePath="$PROJECT_DIR$/Server/src/main/java/Handler.java" afterPath="$PROJECT_DIR$/Server/src/main/java/Handler.java" />
-      <change beforePath="$PROJECT_DIR$/Server/src/main/java/database/Journal.java" afterPath="$PROJECT_DIR$/Server/src/main/java/database/Journal.java" />
+      <change beforePath="$PROJECT_DIR$/Client/src/main/java/client/notification/Notification.java" afterPath="$PROJECT_DIR$/Client/src/main/java/client/notification/Notification.java" />
       <change beforePath="$PROJECT_DIR$/database.xml" afterPath="$PROJECT_DIR$/database.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -30,74 +28,15 @@
       <file leaf-file-name="ClientMain.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Client/src/main/java/client/ClientMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="15" lean-forward="false" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
+            <state relative-caret-position="-952">
+              <caret line="4" column="38" lean-forward="false" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
               <folding>
-                <element signature="imports" expanded="true" />
                 <element signature="e#4217#4218#0" expanded="true" />
                 <element signature="e#4252#4253#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Client/src/main/java/client/gui/MainController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="76" column="23" lean-forward="false" selection-start-line="76" selection-start-column="23" selection-end-line="76" selection-end-column="23" />
-              <folding>
-                <element signature="e#712#713#0" expanded="true" />
-                <element signature="e#758#759#0" expanded="true" />
-                <element signature="e#807#808#0" expanded="true" />
-                <element signature="e#851#852#0" expanded="true" />
-                <element signature="e#2278#2279#0" expanded="true" />
-                <element signature="e#2317#2318#0" expanded="true" />
-                <element signature="e#2367#2368#0" expanded="true" />
-                <element signature="e#2413#2414#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Client/src/main/resources/fxml/main.fxml">
-          <provider editor-type-id="JavaFX-Scene-Builder">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="166">
-              <caret line="31" column="106" lean-forward="false" selection-start-line="31" selection-start-column="106" selection-end-line="31" selection-end-column="106" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="notification.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Client/src/main/resources/fxml/notification.fxml">
-          <provider editor-type-id="JavaFX-Scene-Builder">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="96" lean-forward="false" selection-start-line="11" selection-start-column="96" selection-end-line="11" selection-end-column="96" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Journal.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Server/src/main/java/database/Journal.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="52" column="22" lean-forward="false" selection-start-line="52" selection-start-column="22" selection-end-line="52" selection-end-column="22" />
-              <folding>
-                <element signature="e#1019#1020#0" expanded="true" />
-                <element signature="e#1053#1054#0" expanded="true" />
-                <element signature="e#1088#1089#0" expanded="true" />
-                <element signature="e#1117#1118#0" expanded="true" />
-                <element signature="e#1142#1143#0" expanded="true" />
-                <element signature="e#1177#1178#0" expanded="true" />
+                <element signature="e#4426#4427#0" expanded="true" />
+                <element signature="e#4462#4463#0" expanded="true" />
+                <element signature="e#4508#4509#0" expanded="true" />
+                <element signature="e#4532#4533#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -106,36 +45,46 @@
       <file leaf-file-name="NotificationController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Client/src/main/java/client/gui/NotificationController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="747">
-              <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+            <state relative-caret-position="539">
+              <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#882#883#0" expanded="true" />
-                <element signature="e#926#927#0" expanded="true" />
-                <element signature="e#967#968#0" expanded="true" />
-                <element signature="e#1001#1002#0" expanded="true" />
-                <element signature="e#1550#1551#0" expanded="true" />
-                <element signature="e#1601#1602#0" expanded="true" />
+                <element signature="e#911#912#0" expanded="true" />
+                <element signature="e#955#956#0" expanded="true" />
+                <element signature="e#996#997#0" expanded="true" />
+                <element signature="e#1030#1031#0" expanded="true" />
+                <element signature="e#1579#1580#0" expanded="true" />
+                <element signature="e#1630#1631#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+      <file leaf-file-name="Notification.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Client/src/main/java/client/notification/Notification.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="8" lean-forward="true" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
+            <state relative-caret-position="357">
+              <caret line="29" column="46" lean-forward="false" selection-start-line="29" selection-start-column="46" selection-end-line="29" selection-end-column="46" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="database.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="8" lean-forward="false" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="database.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/database.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+            <state relative-caret-position="153">
+              <caret line="9" column="8" lean-forward="false" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -164,8 +113,8 @@
       <file leaf-file-name="Handler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Client/src/main/java/client/handler/Handler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="113">
-              <caret line="115" column="29" lean-forward="false" selection-start-line="115" selection-start-column="16" selection-end-line="115" selection-end-column="29" />
+            <state relative-caret-position="510">
+              <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#6105#6106#0" expanded="true" />
@@ -220,17 +169,17 @@
         <option value="$PROJECT_DIR$/Client/src/main/java/client/gui/RegistrationController.java" />
         <option value="$PROJECT_DIR$/Client/src/main/resources/fxml/addTask.fxml" />
         <option value="$PROJECT_DIR$/Client/src/main/resources/fxml/notification.fxml" />
-        <option value="$PROJECT_DIR$/Client/src/main/java/client/notification/Notification.java" />
         <option value="$PROJECT_DIR$/Client/src/main/java/client/gui/LoginController.java" />
         <option value="$PROJECT_DIR$/Client/src/main/java/client/gui/AddTaskController.java" />
-        <option value="$PROJECT_DIR$/Client/src/main/java/client/ClientMain.java" />
-        <option value="$PROJECT_DIR$/Client/src/main/java/client/gui/NotificationController.java" />
-        <option value="$PROJECT_DIR$/database.xml" />
         <option value="$PROJECT_DIR$/Server/src/main/java/database/Journal.java" />
         <option value="$PROJECT_DIR$/Server/src/main/java/Handler.java" />
         <option value="$PROJECT_DIR$/Client/src/main/java/client/handler/Handler.java" />
         <option value="$PROJECT_DIR$/Client/src/main/java/client/gui/MainController.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/Client/src/main/java/client/ClientMain.java" />
+        <option value="$PROJECT_DIR$/Client/src/main/java/client/gui/NotificationController.java" />
+        <option value="$PROJECT_DIR$/Client/src/main/java/client/notification/Notification.java" />
+        <option value="$PROJECT_DIR$/database.xml" />
       </list>
     </option>
   </component>
@@ -287,6 +236,72 @@
             <path>
               <item name="lab_2" type="b2602c69:ProjectViewProjectNode" />
               <item name="lab_2" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lab_2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lab_2" type="462c0819:PsiDirectoryNode" />
+              <item name="Client" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lab_2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lab_2" type="462c0819:PsiDirectoryNode" />
+              <item name="Client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lab_2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lab_2" type="462c0819:PsiDirectoryNode" />
+              <item name="Client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lab_2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lab_2" type="462c0819:PsiDirectoryNode" />
+              <item name="Client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lab_2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lab_2" type="462c0819:PsiDirectoryNode" />
+              <item name="Client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lab_2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lab_2" type="462c0819:PsiDirectoryNode" />
+              <item name="Client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="handler" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lab_2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lab_2" type="462c0819:PsiDirectoryNode" />
+              <item name="Client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="notification" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lab_2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lab_2" type="462c0819:PsiDirectoryNode" />
+              <item name="Server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lab_2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lab_2" type="462c0819:PsiDirectoryNode" />
+              <item name="Server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -488,7 +503,14 @@
       <option name="project" value="LOCAL" />
       <updated>1521152109296</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Fixed registration&#10;Add notification system">
+      <created>1521305828939</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1521305828939</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -501,9 +523,9 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38350055" sideWeight="0.5021322" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14872068" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38350055" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38350055" sideWeight="0.4978678" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32664436" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -563,7 +585,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init commit" />
     <MESSAGE value="small fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="small fixes" />
+    <MESSAGE value="Fixed registration&#10;Add notification system" />
+    <MESSAGE value="Add notification system" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add notification system" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -592,8 +616,20 @@
           <properties />
           <option name="timeStamp" value="73" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Client/src/main/java/client/gui/NotificationController.java</url>
+          <line>75</line>
+          <properties />
+          <option name="timeStamp" value="76" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Client/src/main/java/client/gui/NotificationController.java</url>
+          <line>40</line>
+          <properties />
+          <option name="timeStamp" value="78" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="76" />
+      <option name="time" value="79" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -602,6 +638,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="36" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -633,6 +670,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="36" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -736,6 +774,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="10" column="31" lean-forward="false" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -829,14 +868,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_152/src.zip!/java/lang/Runnable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="736">
-          <caret line="67" column="25" lean-forward="false" selection-start-line="67" selection-start-column="25" selection-end-line="67" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_152/src.zip!/java/util/Timer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="448">
@@ -871,18 +902,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Client/src/main/java/client/notification/Notification.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#533#738#0" expanded="false" />
-            <element signature="e#737#738#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Client/src/main/java/client/gui/AddTaskController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="713">
@@ -911,49 +930,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Client/src/main/java/client/gui/NotificationController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="747">
-          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#882#883#0" expanded="true" />
-            <element signature="e#926#927#0" expanded="true" />
-            <element signature="e#967#968#0" expanded="true" />
-            <element signature="e#1001#1002#0" expanded="true" />
-            <element signature="e#1550#1551#0" expanded="true" />
-            <element signature="e#1601#1602#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Client/src/main/java/client/ClientMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="15" lean-forward="false" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4217#4218#0" expanded="true" />
-            <element signature="e#4252#4253#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Server/src/main/java/database/Journal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="52" column="22" lean-forward="false" selection-start-line="52" selection-start-column="22" selection-end-line="52" selection-end-column="22" />
-          <folding>
-            <element signature="e#1019#1020#0" expanded="true" />
-            <element signature="e#1053#1054#0" expanded="true" />
-            <element signature="e#1088#1089#0" expanded="true" />
-            <element signature="e#1117#1118#0" expanded="true" />
-            <element signature="e#1142#1143#0" expanded="true" />
-            <element signature="e#1177#1178#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Server/src/main/java/Handler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
@@ -974,8 +950,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Client/src/main/java/client/handler/Handler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="115" column="29" lean-forward="false" selection-start-line="115" selection-start-column="16" selection-end-line="115" selection-end-column="29" />
+        <state relative-caret-position="510">
+          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#6105#6106#0" expanded="true" />
@@ -986,19 +962,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="8" lean-forward="false" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Client/src/main/java/client/gui/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="76" column="23" lean-forward="false" selection-start-line="76" selection-start-column="23" selection-end-line="76" selection-end-column="23" />
+        <state relative-caret-position="237">
+          <caret line="71" column="11" lean-forward="false" selection-start-line="71" selection-start-column="11" selection-end-line="71" selection-end-column="11" />
           <folding>
-            <element signature="e#712#713#0" expanded="true" />
-            <element signature="e#758#759#0" expanded="true" />
-            <element signature="e#807#808#0" expanded="true" />
-            <element signature="e#851#852#0" expanded="true" />
-            <element signature="e#2278#2279#0" expanded="true" />
-            <element signature="e#2317#2318#0" expanded="true" />
-            <element signature="e#2367#2368#0" expanded="true" />
-            <element signature="e#2413#2414#0" expanded="true" />
+            <element signature="e#712#713#0" expanded="false" />
+            <element signature="e#758#759#0" expanded="false" />
+            <element signature="e#807#808#0" expanded="false" />
+            <element signature="e#851#852#0" expanded="false" />
+            <element signature="e#2278#2279#0" expanded="false" />
+            <element signature="e#2317#2318#0" expanded="false" />
+            <element signature="e#2367#2368#0" expanded="false" />
+            <element signature="e#2413#2414#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1014,18 +998,72 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database.xml">
+    <entry file="file://$PROJECT_DIR$/Server/src/main/java/database/Journal.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        <state relative-caret-position="214">
+          <caret line="50" column="0" lean-forward="true" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+          <folding>
+            <element signature="e#1019#1020#0" expanded="false" />
+            <element signature="e#1053#1054#0" expanded="false" />
+            <element signature="e#1088#1089#0" expanded="false" />
+            <element signature="e#1117#1118#0" expanded="false" />
+            <element signature="e#1142#1143#0" expanded="false" />
+            <element signature="e#1177#1178#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_152/src.zip!/java/lang/Runnable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="69" column="0" lean-forward="true" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/Client/src/main/java/client/gui/NotificationController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="8" lean-forward="true" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
+        <state relative-caret-position="539">
+          <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#911#912#0" expanded="true" />
+            <element signature="e#955#956#0" expanded="true" />
+            <element signature="e#996#997#0" expanded="true" />
+            <element signature="e#1030#1031#0" expanded="true" />
+            <element signature="e#1579#1580#0" expanded="true" />
+            <element signature="e#1630#1631#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/src/main/java/client/ClientMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-952">
+          <caret line="4" column="38" lean-forward="false" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
+          <folding>
+            <element signature="e#4217#4218#0" expanded="true" />
+            <element signature="e#4252#4253#0" expanded="true" />
+            <element signature="e#4426#4427#0" expanded="true" />
+            <element signature="e#4462#4463#0" expanded="true" />
+            <element signature="e#4508#4509#0" expanded="true" />
+            <element signature="e#4532#4533#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/src/main/java/client/notification/Notification.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="29" column="46" lean-forward="false" selection-start-line="29" selection-start-column="46" selection-end-line="29" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="8" lean-forward="false" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
           <folding />
         </state>
       </provider>
@@ -1107,6 +1145,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
+          <last-edited>Maven: com.fasterxml.jackson.core:jackson-annotations:2.9.0</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

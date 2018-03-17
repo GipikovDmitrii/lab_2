@@ -4,6 +4,8 @@ import client.gui.NotificationController;
 import client.task.Task;
 
 import javafx.collections.ObservableList;
+
+import java.io.IOException;
 import java.util.*;
 
 public class Notification {
