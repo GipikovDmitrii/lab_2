@@ -75,12 +75,15 @@ public class Handler implements Runnable {
                 answer.add("tasks", array);
                 break;
             }
+            case "deleteAllTask": {
+                deleteAllTask(json.get("userId").getAsString());
+                JsonArray array = getTaskList(json.get("userId").getAsString());
+                answer.add("tasks", array);
+                break;
+            }
             case "disconnect": {
                 disconnect();
                 break;
-            }
-            case "deleteAllTask": {
-                deleteAllTask(json.get("userId").getAsString());
             }
         }
         sendAnswer(answer.toString());

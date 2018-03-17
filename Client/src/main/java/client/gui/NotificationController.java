@@ -1,24 +1,28 @@
 package client.gui;
 
-import client.ClientMain;
 import client.handler.Handler;
 import client.task.Task;
 
+import javafx.application.Platform;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
+import javafx.scene.image.Image;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 
 public class NotificationController {
 
     private Handler handler;
-    private ClientMain clientMain;
     private Task task;
     private Stage stage;
 
+    @FXML
+    private AnchorPane pane;
     @FXML
     private Button completeTask;
     @FXML
@@ -38,14 +42,14 @@ public class NotificationController {
     public NotificationController(Task task) {
         this.handler = Handler.getHandler();
         this.task = task;
-    }
-
-    public void setGui(ClientMain clientMain) {
-        this.clientMain = clientMain;
-    }
-
-    public void getStage(Stage stage) {
-        this.stage = stage;
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("/fxml/notification.fxml"));
+        loader.setController(this);
+        try {
+            pane = loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
@@ -73,6 +77,19 @@ public class NotificationController {
     }
 
     public void showNotification() {
-        clientMain.showNotificationWindow();
+        Platform.runLater(new Runnable() {
+            @Override
+            public void run() {
+                taskTitle.setText(task.getName());
+                taskDescription.setText(task.getDescription());
+                Scene scene = new Scene(pane);
+                stage = new Stage();
+                stage.setScene(scene);
+                stage.setTitle("Notification");
+                stage.setResizable(false);
+                stage.getIcons().add(new Image("images/icon.png"));
+                stage.show();
+            }
+        });
     }
 }

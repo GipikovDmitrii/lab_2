@@ -77,7 +77,7 @@ public class ClientMain extends Application{
         }
     }
 
-    public void showNotificationWindow() {
+/*    public void showNotificationWindow() {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getResource("/fxml/notification.fxml"));
@@ -96,7 +96,7 @@ public class ClientMain extends Application{
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
+    }*/
 
     public void showNewTaskWindow() {
         try {

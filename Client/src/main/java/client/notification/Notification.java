@@ -22,13 +22,16 @@ public class Notification {
     }
 
     private void createNotification(Task task) {
-        Timer timer = new Timer();
-        timer.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                controller = new NotificationController(task);
-                controller.showNotification();
-            }
-        }, task.getEndTimeAsDate());
+        long delay = (task.getEndTimeAsDate().getTime() - new Date().getTime());
+        if (delay > 0) {
+            Timer timer = new Timer();
+            timer.schedule(new TimerTask() {
+                @Override
+                public void run() {
+                    controller = new NotificationController(task);
+                    controller.showNotification();
+                }
+            }, delay);
+        }
     }
 }
