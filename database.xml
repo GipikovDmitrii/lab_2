@@ -1,10 +1,3 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <users>
-    <user>
-        <id>58ec1f58-2eb7-4066-ba80-d96988f9d462</id>
-        <username>username</username>
-        <password>password</password>
-        <email>email</email>
-        <journal lastTaskId="0"/>
-    </user>
 </users>

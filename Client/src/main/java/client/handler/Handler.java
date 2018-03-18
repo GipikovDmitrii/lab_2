@@ -27,12 +27,13 @@ public class Handler {
     private int port;
     private String userId;
     private Notification notification;
-    public ObservableList<Task> tasks = FXCollections.observableArrayList();
+    public ObservableList<Task> tasks;
 
     private Handler() {
         notification = new Notification();
         address = ResourceBundle.getBundle("config").getString("address");
         port = Integer.parseInt(ResourceBundle.getBundle("config").getString("port"));
+        tasks = FXCollections.observableArrayList();
         connect();
     }
 
@@ -63,7 +64,7 @@ public class Handler {
             object.add("password", new JsonPrimitive(password));
             JsonObject o = sendAndGetAnswer(object.toString());
             if (o.get("command").getAsString().equals("success")) {
-                userId = o.get("userId").getAsString();
+                this.userId = o.get("userId").getAsString();
                 getTaskList(o);
             } else if (o.get("command").getAsString().equals("userNotFound")){
                 return false;
@@ -94,7 +95,7 @@ public class Handler {
             object.add("userId", new JsonPrimitive(userId));
             object.add("name", new JsonPrimitive(task.getName()));
             object.add("description", new JsonPrimitive(task.getDescription()));
-            object.add("time", new JsonPrimitive(task.getEndTime()));
+            object.add("endTime", new JsonPrimitive(task.getEndTime()));
             getTaskList(sendAndGetAnswer(object.toString()));
         } catch (IOException e) {
             e.printStackTrace();
@@ -124,6 +125,19 @@ public class Handler {
         }
     }
 
+    public void rescheduleTask(int taskId, String time) {
+        JsonObject object = new JsonObject();
+        try {
+            object.add("command", new JsonPrimitive("reschedule"));
+            object.add("userId", new JsonPrimitive(userId));
+            object.add("taskId", new JsonPrimitive(taskId));
+            object.add("endTime", new JsonPrimitive(time));
+            getTaskList(sendAndGetAnswer(object.toString()));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     private void getTaskList(JsonObject object) {
         clearTaskList();
         JsonArray array = object.get("tasks").getAsJsonArray();
@@ -133,30 +147,17 @@ public class Handler {
                     o.get("taskId").getAsInt(),
                     o.get("name").getAsString(),
                     o.get("description").getAsString(),
-                    o.get("time").getAsString(),
+                    o.get("endTime").getAsString(),
                     o.get("createdTime").getAsString());
             this.tasks.add(task);
         }
         notification.updateNotification(tasks);
     }
 
-    public void rescheduleTask(int taskID, int time) {
-        JsonObject object = new JsonObject();
-        try {
-            object.add("command", new JsonPrimitive("reschedule"));
-            object.add("userId", new JsonPrimitive(userId));
-            object.add("taskId", new JsonPrimitive(taskID));
-            object.add("time", new JsonPrimitive(time));
-            getTaskList(sendAndGetAnswer(object.toString()));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
     public void disconnect() {
         JsonObject object = new JsonObject();
         try {
-            object.add("command", new JsonPrimitive("disconnect"));
+        object.add("command", new JsonPrimitive("disconnect"));
             sendAndGetAnswer(object.toString());
         } catch (IOException e) {
             e.printStackTrace();
@@ -169,11 +170,7 @@ public class Handler {
         output.flush();
         Object object = input.readUTF();
         JsonParser parser = new JsonParser();
-        return parser.parse((String)object).getAsJsonObject();
-    }
-
-    public ObservableList<Task> getTasks() {
-        return this.tasks;
+        return parser.parse((String) object).getAsJsonObject();
     }
 
     private void clearTaskList() {

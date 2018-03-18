@@ -1,6 +1,5 @@
 package client.task;
 
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -76,7 +75,17 @@ public class Task {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        return null;
+        return new Date();
+    }
+
+    @Override
+    public String toString() {
+        return "Task{" +
+                "idTask=" + idTask +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", endTime='" + endTime + '\'' +
+                ", createdTime='" + createdTime + '\'' +
+                '}';
     }
 }
-

@@ -12,6 +12,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import java.io.IOException;
 
@@ -20,6 +21,7 @@ public class NotificationController {
     private Handler handler;
     private Task task;
     private Stage stage;
+    private FXMLLoader loader;
 
     @FXML
     private AnchorPane pane;
@@ -42,7 +44,7 @@ public class NotificationController {
     public NotificationController(Task task) {
         this.handler = Handler.getHandler();
         this.task = task;
-        FXMLLoader loader = new FXMLLoader();
+        this.loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("/fxml/notification.fxml"));
         loader.setController(this);
         try {
@@ -60,36 +62,34 @@ public class NotificationController {
 
     @FXML
     private void rescheduleFiveMin() {
-        handler.rescheduleTask(task.getTaskId(), 1);
+        handler.rescheduleTask(task.getTaskId(), "fiveMin");
         stage.close();
     }
 
     @FXML
     private void rescheduleOneHour() {
-        handler.rescheduleTask(task.getTaskId(), 2);
+        handler.rescheduleTask(task.getTaskId(), "oneHour");
         stage.close();
     }
 
     @FXML
     private void rescheduleOneDay() {
-        handler.rescheduleTask(task.getTaskId(), 3);
+        handler.rescheduleTask(task.getTaskId(), "oneDay");
         stage.close();
     }
 
     public void showNotification() {
-        Platform.runLater(new Runnable() {
-            @Override
-            public void run() {
-                taskTitle.setText(task.getName());
-                taskDescription.setText(task.getDescription());
-                Scene scene = new Scene(pane);
-                stage = new Stage();
-                stage.setScene(scene);
-                stage.setTitle("Notification");
-                stage.setResizable(false);
-                stage.getIcons().add(new Image("images/icon.png"));
-                stage.show();
-            }
+        Platform.runLater(() -> {
+            taskTitle.setText(task.getName());
+            taskDescription.setText(task.getDescription());
+            Scene scene = new Scene(pane);
+            stage = new Stage();
+            stage.setScene(scene);
+            stage.initModality(Modality.WINDOW_MODAL);
+            stage.setTitle("Notification");
+            stage.setResizable(false);
+            stage.getIcons().add(new Image("images/icon.png"));
+            stage.show();
         });
     }
 }

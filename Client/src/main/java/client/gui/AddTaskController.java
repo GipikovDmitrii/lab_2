@@ -49,15 +49,8 @@ public class AddTaskController {
 
     @FXML
     private void saveTask() {
-        if (titleTask.getText().equals("")) {
-            errorMessage.setText("error");
-            //titleTask.setStyle("-fx-border-color: red;");
-        } else if (descriptionTask.getText().equals("")) {
-            errorMessage.setText("error");
-        } else if (time.getValue() == null) {
-            errorMessage.setText("error");
-        } else if (date.getValue() == null) {
-            errorMessage.setText("error");
+        if (titleTask.getText().equals("") | descriptionTask.getText().equals("") | time.getValue() == null | date.getValue() == null) {
+            errorMessage.setText("Fill in all the fields");
         } else {
             handler.newTask(new Task(
                     titleTask.getText(),

@@ -2,17 +2,17 @@ package client;
 
 import client.gui.*;
 
+import client.handler.Handler;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.text.Font;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import java.io.IOException;
 
-public class ClientMain extends Application{
+public class ClientMain extends Application {
 
     private Stage primaryStage;
 
@@ -77,27 +77,6 @@ public class ClientMain extends Application{
         }
     }
 
-/*    public void showNotificationWindow() {
-        try {
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("/fxml/notification.fxml"));
-            AnchorPane pane = loader.load();
-            Scene scene = new Scene(pane);
-            Stage stage = new Stage();
-            NotificationController controller = loader.getController();
-            controller.setGui(this);
-            controller.getStage(stage);
-            stage.initOwner(primaryStage);
-            stage.setScene(scene);
-            stage.setTitle("Notification");
-            stage.setResizable(false);
-            stage.getIcons().add(new Image("images/icon.png"));
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }*/
-
     public void showNewTaskWindow() {
         try {
             FXMLLoader loader = new FXMLLoader();
@@ -120,13 +99,13 @@ public class ClientMain extends Application{
         }
     }
 
+    @Override
+    public void stop() {
+        Handler.getHandler().disconnect();
+    }
 
     public Stage getPrimaryStage() {
         return primaryStage;
-    }
-
-    private void setFonts() {
-        Font.loadFont(getClass().getResource("/fonts/Raleway-ExtraLight.ttf").toExternalForm(), 10);
     }
 
     private static void launch() {

@@ -8,13 +8,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class RegistrationController {
+
     private ClientMain clientMain;
     private Handler handler;
-    private Pattern pattern = Pattern.compile("/+@+\\.+/");
 
     @FXML
     private PasswordField passwordField;
@@ -38,12 +36,10 @@ public class RegistrationController {
     }
 
     public void register() {
-        if (!(usernameField.getLength() > 3)) {
-            errorMessage.setText("Username is too short");  //(minimum is 3 characters)
-        } else if ((checkValidEmail(emailField.getText()))) {
-            errorMessage.setText("Email is incorrect");
+        if (!(usernameField.getLength() > 4)) {
+            errorMessage.setText("Username is too short");
         } else if (!(passwordField.getLength() > 5)) {
-            errorMessage.setText("Password is too short");  //(minimum is 6 characters)
+            errorMessage.setText("Password is too short");
         } else {
             String username = usernameField.getText();
             String email = emailField.getText();
@@ -51,11 +47,6 @@ public class RegistrationController {
             handler.registration(username, email, password);
             clientMain.showLoginWindow();
         }
-    }
-
-    private boolean checkValidEmail(String email) {
-        Matcher m = pattern.matcher(email);
-        return m.matches();
     }
 
     @FXML

@@ -7,7 +7,9 @@ import database.User;
 
 import java.io.*;
 import java.net.Socket;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 public class Handler implements Runnable {
 
@@ -15,14 +17,14 @@ public class Handler implements Runnable {
     private ObjectInputStream inputStream;
     private ObjectOutputStream outputStream;
     private UserList userList;
-    private XmlManager manager = new XmlManager();
+    private XmlManager manager;
 
     public Handler(Socket clientSocket) {
+        this.manager = new XmlManager();
         this.clientSocket = clientSocket;
     }
 
     public void run() {
-        System.out.println("new connection: " + Thread.currentThread().getId());
         try {
             userList = manager.loadXml();
             inputStream = new ObjectInputStream(clientSocket.getInputStream());
@@ -45,43 +47,55 @@ public class Handler implements Runnable {
                         json.get("username").getAsString(),
                         json.get("email").getAsString(),
                         json.get("password").getAsString());
+                saveData();
                 break;
             case "login":
                 if (isRegister(json.get("username").getAsString(), json.get("password").getAsString())) {
-                    String userId = login(json.get("username").getAsString(), json.get("password").getAsString());
-                    JsonArray array = getTaskList(userId);
                     answer.add("command", new JsonPrimitive("success"));
-                    answer.add("userId", new JsonPrimitive(userId));
-                    answer.add("tasks", array);
+                    answer.add("userId", new JsonPrimitive(login(json.get("username").getAsString(), json.get("password").getAsString())));
+                    answer.add("tasks", getTaskList(login(json.get("username").getAsString(), json.get("password").getAsString())));
                 } else {
                     answer.add("command", new JsonPrimitive("userNotFound"));
                 }
+                saveData();
                 break;
             case "newTask": {
                 addTask(
                         json.get("userId").getAsString(),
                         json.get("name").getAsString(),
                         json.get("description").getAsString(),
-                        json.get("time").getAsString());
-                JsonArray array = getTaskList(json.get("userId").getAsString());
-                answer.add("tasks", array);
+                        json.get("endTime").getAsString());
+                answer.add("tasks", getTaskList(json.get("userId").getAsString()));
+                saveData();
                 break;
             }
             case "deleteTask": {
-                String userId = json.get("userId").getAsString();
-                int taskId = json.get("taskId").getAsInt();
-                removeTask(userId, taskId);
-                JsonArray array = getTaskList(userId);
-                answer.add("tasks", array);
+                removeTask(
+                        json.get("userId").getAsString(),
+                        json.get("taskId").getAsInt());
+                answer.add("tasks", getTaskList(json.get("userId").getAsString()));
+                saveData();
                 break;
             }
             case "deleteAllTask": {
                 deleteAllTask(json.get("userId").getAsString());
-                JsonArray array = getTaskList(json.get("userId").getAsString());
-                answer.add("tasks", array);
+                answer.add(
+                        "tasks",
+                        getTaskList(json.get("userId").getAsString()));
+                saveData();
+                break;
+            }
+            case "reschedule": {
+                rescheduleTask(
+                        json.get("userId").getAsString(),
+                        json.get("taskId").getAsInt(),
+                        json.get("endTime").getAsString());
+                answer.add("tasks", getTaskList(json.get("userId").getAsString()));
+                saveData();
                 break;
             }
             case "disconnect": {
+                saveData();
                 disconnect();
                 break;
             }
@@ -90,8 +104,7 @@ public class Handler implements Runnable {
     }
 
     private void registration(String username, String password, String email) {
-        User user = new User(username, password, email);
-        userList.addUser(user);
+        userList.addUser(new User(username, password, email));
     }
 
     private String login(String username, String password) {
@@ -112,7 +125,29 @@ public class Handler implements Runnable {
         userList.getUserById(userId).getJournal().deleteTask(userList.getUserById(userId).getJournal().getTaskById(id));
     }
 
-    private void rescheduleTask(int taskId, int time) {
+    private void rescheduleTask(String userId, int taskId, String time) {
+        Task task = userList.getUserById(userId).getJournal().getTaskById(taskId);
+        SimpleDateFormat dateFormat = new SimpleDateFormat("h:mm MM-dd-yyyy");
+        Calendar calendar = Calendar.getInstance();
+        try {
+            calendar.setTime(dateFormat.parse(task.getEndTime()));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        switch (time) {
+            case "fiveMin":
+                calendar.add(Calendar.MINUTE, 5);
+                task.setEndTime(dateFormat.format(calendar.getTime()));
+                break;
+            case "oneHour":
+                calendar.add(Calendar.HOUR, 1);
+                task.setEndTime(dateFormat.format(calendar.getTime()));
+                break;
+            case "oneDay":
+                calendar.add(Calendar.DATE, 1);
+                task.setEndTime(dateFormat.format(calendar.getTime()));
+                break;
+        }
     }
 
     private void deleteAllTask(String userId) {
@@ -128,7 +163,7 @@ public class Handler implements Runnable {
             object.add("taskId", new JsonPrimitive(task.getTaskId()));
             object.add("name", new JsonPrimitive(task.getName()));
             object.add("description", new JsonPrimitive(task.getDescription()));
-            object.add("time", new JsonPrimitive(task.getTime()));
+            object.add("endTime", new JsonPrimitive(task.getEndTime()));
             object.add("createdTime", new JsonPrimitive(task.getCreatedTime()));
             array.add(object);
         }
@@ -136,6 +171,9 @@ public class Handler implements Runnable {
     }
 
     private void disconnect() {
+    }
+
+    private void saveData() {
         manager.saveXml(userList);
     }
 

@@ -1,5 +1,7 @@
 package database;
 
+import com.sun.istack.internal.Nullable;
+
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.ArrayList;
@@ -19,6 +21,7 @@ public class UserList {
         userList.add(user);
     }
 
+    @Nullable
     public User getUser(String username, String password) {
         for (User u : userList) {
             if (u.getUsername().equals(username) && u.getPassword().equals(password)) {
@@ -34,6 +37,6 @@ public class UserList {
                 return u;
             }
         }
-        return null;
+        return new User();
     }
 }
